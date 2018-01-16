@@ -1,0 +1,24 @@
+跳转：10.0.20.22  登录方式同本机一致
+开发：10.0.30.36  xulinchao    xlc2014
+\\10.0.10.2  xulinchao    xlc2014
+OA           xulinchao 123456
+
+ginreen eservice账号密码已修改
+Account : zhaoxin@ginreen.com 
+Password : March1234
+
+SD卡升失败的话 把cache/recovery里面的log找出来看下 能大概知道原因
+【售后升级】支持T卡升级和Fota升级
+1518908这是我们公司的信息登记号
+Account：molbasic01@ginreen.com
+Password: ginreen01
+
+
+	public void controlMode(int i){
+		player.mode=i;
+		mode.setSelectedIndex(i);
+	}
+	public void controlVoice(int i){
+		player.setVoiceValue(minVoice+i);
+		voiceAdjust.setValue(minVoice+i);
+	}

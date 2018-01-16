@@ -1,0 +1,3 @@
+\\10.0.10.2\exchange_sw\wangjianji
+S311W_K10_20150125.zip
+repo init -u git3@10.0.30.6:MT6592_KK/tools/manifest.git -b Stable_Mass_MVN_VE_QB25SD_P182A10V1.0.1B06_BRH

@@ -1,0 +1,17 @@
+ps -eaf |grep -v grep | grep git
+sudo kill 进程号
+export PATH=$PATH:/home1/xulinchao/bin
+repoc init -u git://10.0.30.9/asus_asop/platform/manifest -b AN-mr0-ZC521TL-dev
+repoc init -u git://10.0.30.9/E266L_ASUS/platform/manifest -b AN-mr0-ZC550TL-dev
+使用新版repoc
+vim ~/.bashrc 
+在后面加上export PATH=$PATH:/home/xulinchao/bin    其中/home/xulinchao/bin 是你所建的bin的目录。
+然后source ~/.bashrc 
+
+首次建立镜像，修改.gitconfig和.ssh/config文件，项目名修改成对应asus用户名。这样才能拖代码下来，
+
+每次更新的时候，也要修改这两个文件。至于更新也是如上最好，也就是修改脚本达到效果。（这个我们服务器不需要，因为我这边没做rsa限制）
+
+
+新拖代码
+repo init -u ssh://mcbugit1.asus.com/platform/manifest -b AN-mr0-ZC521TL-dev --mirror

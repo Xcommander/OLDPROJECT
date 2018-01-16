@@ -1,0 +1,19 @@
+1)     在 packages/apps 下面以需要预置的 APK 名字创建文件夹，以预置一个名为Test的APK为例
+2)     将 Test.apk 放到 packages/apps/Test 下面
+3)     在  packages/apps/Test 下面创建文件 Android.mk，文件内容如下：
+LOCAL_PATH := $(call my-dir)
+include $(CLEAR_VARS)
+# Module name should match apk name to be installed
+LOCAL_MODULE := Test
+LOCAL_MODULE_TAGS := optional
+LOCAL_SRC_FILES := $(LOCAL_MODULE).apk
+LOCAL_MODULE_CLASS := APPS
+LOCAL_MODULE_SUFFIX := $(COMMON_ANDROID_PACKAGE_SUFFIX)
+LOCAL_CERTIFICATE := PRESIGNED
+include $(BUILD_PREBUILT)
+4)     打开文件 build/target/product/${Project}.mk （其中 ${Project} 表示工程名）
+将 Test 添加到 PRODUCT_PACKAGES 里面。
+5)     将从Test.apk解压出来的 so库拷贝到alps/vendor/mediatek/${Project}/artifacts/out/target/product/${Project}/system/lib/目录下，若无 so 库，则去掉此步；
+6)     重新 build 整个工程
+注：Google在KK上修改protection Level为System的permission控管机制
+如果App使用System Level的permission，需要預置到/system/priv-app底下 (原在/system/app)。

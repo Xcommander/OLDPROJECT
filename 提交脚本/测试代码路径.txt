@@ -1,0 +1,1 @@
+repo init -u  git@10.0.30.8:GR6737M_65_M0_SW3/tools/manifest.git -b PDU3_GIT_SCRIPT_TEST && repo sync -j4 && repo start PDU3_GIT_SCRIPT_TEST --all

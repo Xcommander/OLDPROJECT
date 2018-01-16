@@ -1,0 +1,55 @@
+如何将无源码的 APK 预置进系统？
+ 1)     在 vendor/mediatek/proprietary/custom/$project/apps 下面以需要预置的 APK 名字创建文件夹，以预置一个名为Test的APK为例
+ 2)     将 Test.apk 放到 apps/Test 下面
+ 3)     在  apps/Test 下面创建文件 Android.mk，文件内容如下：
+
+ LOCAL_PATH := $(call my-dir)
+ include $(CLEAR_VARS)
+ LOCAL_MODULE := Test
+ LOCAL_MODULE_TAGS := optional
+ LOCAL_SRC_FILES := $(LOCAL_MODULE).apk
+ LOCAL_MODULE_CLASS := APPS
+ LOCAL_MODULE_SUFFIX := $(COMMON_ANDROID_PACKAGE_SUFFIX)
+
+ LOCAL_PREBUILT_JNI_LIBS:= \
+ @lib/armeabi/libtest.so  \
+ @lib/armeabi/libtest2.so 
+
+ LOCAL_CERTIFICATE := PRESIGNED
+ include $(BUILD_PREBUILT)
+
+ 若无so，删除LOCAL_PREBUILT_JNI_LIBS
+ 若有so，使用LOCAL_PREBUILT_JNI_LIBS列出所有so的路径，不要忘记使用@。@标识符会将apk中的so抽离出来build进system/lib或者system/lib64中
+
+ 若apk支持不同cpu类型的so，针对so的部分的处理:
+ Ifeq ($(TARGET_ARCH),arm)
+ LOCAL_PREBUILT_JNI_LIBS := \
+ @lib/armeabi-v7a/xxx.so\
+ @ lib/armeabi-v7a/xxxx.so
+ else ifeq ($(TARGET_ARCH),x86)
+ LOCAL_PREBUILT_JNI_LIBS := \
+ @lib/x86/xxx.so
+ else ifeq ($(TARGET_ARCH),arm64)
+ LOCAL_PREBUILT_JNI_LIBS := \
+ @lib/armeabi-v8a/xxx.so
+ …
+ 即将和TARGET_ARCH对应的so抽离出来
+
+ 这里详细解释一下上面的代码作用
+ 如果该apk使用自己的签名那么使用LOCAL_CERTIFICATE := PRESIGNED
+ 如果该apk使用平台的签名那么使用LOCAL_CERTIFICATE := platform
+
+ 如果该apk用户可以卸载，恢复出厂设置时不能恢复，那么在mk当中加入下面一句代码
+ LOCAL_MODULE_PATH := $(TARGET_OUT_DATA_APPS)
+ 如果该apk用户可以卸载，并且恢复出厂设置时能够恢复，那么在mk当中加入下面一句代码
+ LOCAL_MODULE_PATH := $(TARGET_OUT)/vendor/operator/app
+
+ 如果在apk是需要可以卸载，那么在mk里面不需要提取.so文件，把mk里面的提取.so文件的代码去掉
+
+ 如果该apk作为32bit的apk运行，则需要在Android.mk中定义
+ LOCAL_MULTILIB :=32
+
+ 然后，打开文件device\mediatek\common\device.mk，然后加入下面一句代码
+ PRODUCT_PACKAGES += Test
+ 然后编译改项目
+

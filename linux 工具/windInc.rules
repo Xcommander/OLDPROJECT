@@ -1,0 +1,6 @@
+SUBSYSTEM=="usb",SYSFS{idVendor}=="0e8d",SYSFS{idProduct}="201d",MODE="0777"
+SUBSYSTEM=="usb",
+ACTION=="add",ATTRS{idVendor}=="0e8d",ATTRS{idProduct}="201d",SYMLINK+="android_adb"
+KERNEL=="ttyACM*",MODE="0777"
+ATTRS{idVendor}=="0e8d",ENV{ID_MM_DEVICE_IGNORE}="1"
+ATTRS{idProduct}="201d",ENV{ID_MM_DEVICE_IGNORE}="1"

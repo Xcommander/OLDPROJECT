@@ -1,0 +1,16 @@
+安装步骤：
+1.unzip SP_Flash_Tool_exe_Linux_v5.1640.00.100_ZC521TL.zip -d  SP_Flash_Tool_exe_Linux_v5.1640.00.100_ZC521TL
+
+2.安装 adb（ubuntu 14.10版本下载安装adb后是支持adb调试的，ubuntu 12.04可能需要添加adb调试驱动，也有可能默认支持）
+
+3.添加下载驱动 /etc/udev/rules.d/windInc.rules，将附件中的windInc.rules文件复制到/etc/udev/rules.d/目录下
+
+4.sudo chmod a+rx /etc/udev/rules.d/windInc.rules
+
+5.sudo /etc/init.d/udev restart
+
+6.cd SP_Flash_Tool_exe_Linux_v5.1640.00.100_ZC521TL and ./flash_tool( or ./flash_tool.sh).你可以将刷机工具目录加到环境变量中，直接运行指令flash_tool，即可打开download ui界面。
+
+此工具已经在ubuntu 12.04 、14.10、16.04都做了兼容，按照操作步骤均可download，如若有什么问题，请联系我。
+邮箱：xulinchao@wind-mobi.com
+

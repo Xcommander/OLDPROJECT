@@ -1,0 +1,57 @@
+电话界面：com.android.dialer/.DialtactsActivity
+电话设置：com.android.dialer/.settings.DialerSettingsActivity
+通话设置：com.android.phone/.CallFeaturesSetting
+Software Update=Обновление ПО 
+My Phone Name=Имя телефона
+
+
+	81145	【APP】链接应用	SW1-SCM 李南洋
+	78921	【其他】PWS需求	SW1-APP2 孙晖辉
+	78920	【UI】屏蔽号码归属地的显示	SW1-APP 李飞飞
+	78919	【UI】取消电量百分比的显示	SW1-APP2 孙晖辉
+	78917	【其他】接收短信号码显示	SW1-APP2 孙晖辉
+	78916	【其他】来电号码显示	SW1-APP2 孙晖辉
+	78915	【其他】wording	SW1-SCM 许林超
+	78913	【UI】3G和H信号图标显示	SW1-APP 彭福根
+	78912	【FM】繁体中文下：FM模块名为“收音機”。	SW1-APP 王焱
+	78911	【其他】从应用商店下载的应用程序需要能够在设定>应用程式 中转移到T卡	SW1-SCM 许林超
+	78910	【其他】选网菜单修改	SW1-APP2 孙晖辉
+	78908	【其他】支持EAP SIM功能	SW1-APP2 孙晖辉
+	78907	【WIFI】WIFI HOTSPOT设置	SW1-APP2 孙晖辉
+	78906	【Wifi连接】设定>wifi>高级wifi>休眠wifi连接状态，默认改为永远连线。	SW1-APP 王焱
+	78905	【TTY模式】删除设置——通话设置下的“TTY模式”菜单。	SW1-SCM 张贺廷
+	78904	【UI】应用名称显示	SW1-APP 彭福根
+	78903	【其他】存储设置	SW1-APP 梁峰
+	78902	【其他】各类开机自适应规则	SW1-APP2 孙晖辉
+	78901	【其他】PC侧驱动	SW1-DRV 涂文赞
+	78900	【其他】更新开发源代码许可	SW1-APP 彭福根
+	78898	【飞行模式】飞行模式下WIFI、GPS、BT、FM、紧急号码是否可以正常使用，保持平台默认	SW1-APP 王焱
+	78897	【其他】信号格需求	SW1-SPM 肖海棠
+	78896	【其他】温度性能指标	SW1-DRV 徐之峰
+	78895	【UI】不可拆卸电池，从用户使用方便的角度考虑，需要增加长按电源键重启功能、长按电源键10S关机15S重启	SW1-SPM 肖海棠
+	78893	【DRM】支持FL Only	SW1-APP2 孙晖辉
+	78892	【多媒体】照相机需求	SW1-SCM 许林超
+	78891	【FOTA】支持Fota升级	SW1-SCM 张贺廷
+	78890	【T卡】支持T卡升级	SW1-APP 盛波涛
+	78888	【无线标志位】无线标志位写入成功需要显示PASS	SW1-APP 盛波涛
+	78887	【产线下载工具】 多路下载的配置文件需要添加	SW1-SPM 肖海棠
+	78886	【Camera应用】开机后Camera图标一直存在，不管有无Camera sensor，后续如侦测到sensor，也不需要恢复出厂设置才能出现Camera图标	SW1-SPM 肖海棠
+	78885	【裸机开机】产线要求支持不贴TP和LCD的时候可以正常开机，请在驱动层打开该功能	SW1-SPM 肖海棠
+	78882	【参数】默认参数配置	SW1-APP 王焱
+	78881	【项目版本】项目版本号定义	SW1-SCM 许林超
+	78880	【系统参数】系统空间	SW1-SPM 肖海棠
+	78879	【其他】PID VID的定制	SW1-APP2 孙晖辉
+	78875	【APP】第三方APK	SW1-APP2 孙晖辉
+	78873	【CTS】CTS需求	SW1-SCM 张贺廷
+	78871	【GMS需求】GMS需求总控	SW1-SCM 张贺廷
+	78870	【呼叫设置】语音信箱、号码匹配、小区广播、短信编码	SW1-APP2 孙晖辉
+	78868	【Date & time】日期，时间和时区	SW1-APP 王焱
+	78866	【Browser】浏览器主页，书签和搜索引擎	SW1-APP 彭福根
+	78865	【APN】定制APN要求	SW1-APP2 孙晖辉
+	78864	【UA】User Agent	SW1-APP 王焱
+	78862	【Language & keyboard】语言和输入法	SW1-APP 彭福根
+	78861	【Emergency Number】紧急拨号	SW1-SCM 许林超
+	78858	【Operator Name】运营商名称	SW1-APP2 孙晖辉
+	78856	【UI】开关机logo、动画、铃声、壁纸、桌面布局、铃声等	SW1-SCM 许林超
+	78855	【Basic Configuration】基本配置Basic Configuration	SW1-SCM 张贺廷
+

@@ -1,0 +1,18 @@
+启动activity
+adb shell am start  com.asus.logreport/.LogReportMainActivity
+
+打印kernel log
+
+打印window相关信息
+adb shell dumpsys window -w
+
+截图
+adb shell /system/bin/screencap -p /storage/emulated/0/Screenshots/1.png
+
+隐藏导航栏
+adb shell settings put global policy_control immersive.navigation=*
+退出隐藏导航栏
+adb shell settings put global policy_control null
+
+清空adb logcat缓存
+adb logcat -c

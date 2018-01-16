@@ -1,0 +1,15 @@
+[DESCRIPTION]
+ 
+部分客户需要在APP层实现听筒，耳机，喇叭loopback测试，在JB2及之后的版本上相关接口已经实现，只需发对应的command即可
+ 
+ 
+ 
+[SOLUTION]
+ 
+AudioManager audiomanager = (AudioManager) getSystemService(Context.AUDIO_SERVICE);
+audiomanager.setParameters("SET_LOOPBACK_TYPE=1,3");
+其中中传入的两个参数意义如下：
+第一个参数表示input device，1，2，3分别代码main mic，耳机mic，sub mic(dual mic项目才有效)
+第二个参数表示output device，1，2，3分别表示听筒，耳机，喇叭
+根据需要进行组合即可
+\\10.0.10.2\正式软件版本\S311W\系统版本\STC\STC_S311W_K10_V1.0B02

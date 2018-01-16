@@ -1,0 +1,1 @@
+repo init -u git@10.0.30.7:GINR6753_65C_L1/tools/manifest.git -b GINR6753_65C_L1_CTS

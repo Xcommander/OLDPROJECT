@@ -1,0 +1,23 @@
+adb shell screenrecord --size 1280x720 /sdcard/demo2.mp4
+adb shell screenrecord --size 720x1280 /sdcard/Mms.mp4
+adb shell rm /data/dalvik-cache/arm64/system@framework@services.jar@classes.dex
+adb shell am broadcast -a com.mediatek.mtklogger.ADB_CMD -e cmd_name start/stop --ei cmd_target 1
+adb shell getprop debug.MB.running
+adb shell getprop debug.mdlogger.Running
+adb shell getprop debug.mtklog.netlog.Running
+adb shell am start -n com.mediatek.mtklogger/com.mediatek.mtklogger.MainActivity
+adb shell du -sh /data/media/0/dzsoftSmart/* | sort -rn
+adb shell rm /storage/sdcard0/mtklog -rf
+adb pull /storage/emulated/0/mtklog .
+
+
+整体回退代码节点的指令：repo forall -c 'ID=`git log --before="2016-07-26 14:00" --after="2016-01-01" -1(数字) --pretty=format:"%H"`; git reset --hard $ID'
+
+
+adb shell dumpsys activity activities
+
+adb shell查看数据库:
+adb shell 
+cd 到指定目录
+sqlite3 xxx.db
+select * from table
